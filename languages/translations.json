@@ -4,14 +4,16 @@
     "selected_language": "Вы выбрали язык",
     "sign_in": "Войти 🚪",
     "enter_username": "Введите ваше имя пользователя 👤",
-    "enter_password": "Введите ваш пароль 🔑"
+    "enter_password": "Введите ваш пароль 🔑",
+    "already_logged_in": "Вы вошли уже в личный кабинет 😔"
   },
   "uz": {
     "welcome": "Telegram botimizga xush kelibsiz 🤖",
     "selected_language": "Siz tilni tanladingiz",
     "sign_in": "Kirish 🚪",
     "enter_username": "Foydalanuvchi nomingizni kiriting 👤",
-    "enter_password": "Parolingizni kiriting 🔑"
+    "enter_password": "Parolingizni kiriting 🔑",
+    "already_logged_in": "Siz allaqachon shaxsiy xisobingizga kirgansiz 😔"
   }
 }
 

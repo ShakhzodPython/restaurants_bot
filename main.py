@@ -7,7 +7,8 @@ from aiogram.fsm.context import FSMContext
 from aiogram.fsm.state import StatesGroup, State
 from aiogram.types import Message, BotCommand
 
-from app.forms.hander import router_sign_in
+from app.forms.hander import router_authorization
+from languages.requests import set_language
 from languages.translation import get_translation
 from config.settings import API_TOKEN
 from app.buttons.keyboards import choose_lang, sign_in
@@ -26,7 +27,8 @@ async def set_commands(bot: Bot):
         BotCommand(command="/start", description="Начать работу бота/Botni ishga tushiring"),
         BotCommand(command="/help", description="Помощь/Yordam"),
         BotCommand(command="/change_language", description="Изменить язык/Tilni almashtirish"),
-        BotCommand(command="/sign_in", description="Вход в личный кабинет/Shaxsiy hisob qaydnomangizga kirish")
+        BotCommand(command="/sign_in", description="Вход в личный кабинет/Shaxsiy hisob qaydnomangizga kirish"),
+        BotCommand(command="/log_out", description="Выход из личного кабинета/Shaxsiy hisobingizdan chiqish")
     ]
     await bot.set_my_commands(commands)
 
@@ -49,6 +51,9 @@ async def choose_language_command(message: Message, state: FSMContext):
 
         # Возвращает lang
         return
+
+    # передаем выбранный язык пользователя на серевер
+    await set_language(lang)
 
     await state.update_data(lang=lang)
 
@@ -75,7 +80,7 @@ async def main():
     bot = Bot(API_TOKEN)
 
     dp.include_router(router)
-    dp.include_router(router_sign_in)
+    dp.include_router(router_authorization)
 
     await set_commands(bot)
     await dp.start_polling(bot)
