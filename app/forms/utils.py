@@ -8,8 +8,6 @@ from logs.logger import logger
 
 async def refresh_access_token(state: FSMContext):
     while True:
-        await asyncio.sleep(3600)  # 3600 -> 1 час
-
         user_data = await state.update_data()
         token = user_data.get("refresh_token")
 
@@ -22,3 +20,5 @@ async def refresh_access_token(state: FSMContext):
                 logger.error("Не удалось обновить access token")
         else:
             logger.error("Refresh token отсутствует")
+
+        await asyncio.sleep((3600 * 24) - 10)  # 23 часа и 50 минут

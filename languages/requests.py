@@ -2,7 +2,7 @@ from httpx import AsyncClient
 
 
 async def set_language(language: str):
-    url = f"http://127.0.0.1:8000/api/v1/language/{language}/"
+    url = f"http://127.0.0.1:8080/api/v1/language/{language}/"
 
     async with AsyncClient() as client:
         response = await client.post(url=url)

@@ -27,8 +27,6 @@ async def set_commands(bot: Bot):
         BotCommand(command="/start", description="Начать работу бота/Botni ishga tushiring"),
         BotCommand(command="/help", description="Помощь/Yordam"),
         BotCommand(command="/change_language", description="Изменить язык/Tilni almashtirish"),
-        BotCommand(command="/sign_in", description="Вход в личный кабинет/Shaxsiy hisob qaydnomangizga kirish"),
-        BotCommand(command="/log_out", description="Выход из личного кабинета/Shaxsiy hisobingizdan chiqish")
     ]
     await bot.set_my_commands(commands)
 

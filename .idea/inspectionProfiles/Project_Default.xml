@@ -42,7 +42,7 @@
     <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="ignoredPackages">
         <value>
-          <list size="118">
+          <list size="119">
             <item index="0" class="java.lang.String" itemvalue="tortoise" />
             <item index="1" class="java.lang.String" itemvalue="pydantic" />
             <item index="2" class="java.lang.String" itemvalue="tortoise-orm" />
@@ -161,6 +161,7 @@
             <item index="115" class="java.lang.String" itemvalue="aiosignal" />
             <item index="116" class="java.lang.String" itemvalue="alembic" />
             <item index="117" class="java.lang.String" itemvalue="Mako" />
+            <item index="118" class="java.lang.String" itemvalue="aiogram" />
           </list>
         </value>
       </option>
